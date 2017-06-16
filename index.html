@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UX Buzzwords 2010-2017</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/dc.css" />
+</head>
+
+<body class="bg-inverse">
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+        <a class="navbar-brand" href="#">Ux Buzzwords</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <span class="dc-data-count navbar-text m-0 pull-right" style="color:#fff; text-right">
+                      Loading...
+                    </span>
+                </li>
+            </ul>
+            <ul class="navbar-nav my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://www.jvetrau.com/category/digest/">Digest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="https://www.facebook.com/groups/pdigest/">Fb Group</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">About</a>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </nav>
+
+
+    <div class="container-fluid">
+
+
+
+        <div id="content" style="display:none">
+          <nav class="navbar navbar-bottom fixed-bottom bg-inverse" id="pubdate-count-chart">
+
+              <div style="position:absolute; left:20px;">
+                  <h3>Timeline <a class="reset" href="javascript:pubDateCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+              </div>
+              <div class="clearfix"></div>
+
+          </nav>
+            <div class="row">
+                <div class="col-2 sidebar sidebar-left">
+                    <div class="row">
+                        <div class="col-12 pb-3" id="type-count-chart">
+                            <h3>By Type                          <a class="reset pull-right" href="javascript:typeCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+</h3>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="lang-count-chart">
+                            <h3>By Lang <a class="reset" href="javascript:langCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="category-count-chart">
+                            <h3>By Category (Top 20) <a class="reset" href="javascript:categoryCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="keywords-count-chart">
+                            <h3>By Keyword <a class="reset" href="javascript:keywordsChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="authors-count-chart">
+                            <h3>By Author <a class="reset" href="javascript:authorsCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="domain-count-chart">
+                            <h3>By Domain <a class="reset" href="javascript:domainCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="col-12 pb-3" style="text-align:center" id="concepts-count-chart">
+                            <h3>By Concept <a class="reset" href="javascript:conceptsCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="companies-count-chart">
+                            <h3>By Company <a class="reset" href="javascript:companiesCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="persons-count-chart">
+                            <h3>By Person <a class="reset" href="javascript:personsCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-12 pb-3" style="text-align:center" id="jobtitles-count-chart">
+                            <h3>By Job Title <a class="reset" href="javascript:jobtitlesCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 offset-2" style="margin-top:51px;">
+                    <div class="row">
+                        <div id="treemap-chart" class="col-12" style="width:1000px; height:600px;"></div>
+                        <!--div id="bar-chart" class="col-12" style="width:1000px; height:600px;"></div-->
+
+                    </div>
+                </div>
+                <div class="col-3 pt-0 sidebar sidebar-right">
+
+                    <div class=" dc-data-grid list-group"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+    <div style="display:none;" class="container-fluid">
+        <div id="test"></div>
+
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter2/1.4.0-alpha.6/crossfilter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reductio/0.6.3/reductio.min.js"></script>
+    <script type="text/javascript" src="js/dcdev.js"></script>
+    <script type="text/javascript" src="js/uxbw.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            fields = ["link", "name", "digest", "category", "type", "domain", "markdownSize", "summary", "pubDate", "title", "w_keywords", "language", "authors", "concepts", "companies", "persons", "jobtitles"]
+
+            function loadFromElasticSearch() {
+                query = {
+                    "size": 10000,
+                    "_source": fields
+                };
+                fetch('http://localhost:9200/jvetrau/links/_search', {
+                    method: 'POST',
+                    //mode: 'no-cors', // we need cors, otherwise we get no response back
+                    body: JSON.stringify(query),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                }).then((response) => {
+                    return response.json();
+                }).catch((ex) => {
+                    console.error('parsing failed', ex);
+                }).then(data => handleData(data, fields));
+            }
+
+            function loadFromJson() {
+                $.getJSON( "data/uxbw.json", function( data ) {
+                handleData(data);
+              });
+            }
+
+            function unwrap(hit, fields) {
+                const unwrapped = {};
+                fields.forEach((field) => {
+                    if (field != 'w_keywords') {
+                        unwrapped[field] = hit._source[field] ? hit._source[field] : ''
+                    } else {
+                        unwrapped[field] = hit._source[field] ? hit._source[field] : []
+
+                    }
+                });
+                return unwrapped;
+            }
+            loadFromJson();
+            function download(text, name, type) {
+                var a = document.createElement("a");
+                var file = new Blob([text], {
+                    type: type
+                });
+                a.href = URL.createObjectURL(file);
+                a.download = name;
+                a.click();
+            }
+
+            function handleData(data) {
+                //download(JSON.stringify(data), 'test.txt', 'text/plain');
+
+                console.log('Loading done');
+                console.log(new Date());
+                //console.log(data);
+                console.log(data.hits.total);
+                console.log(data.hits.hits[0]);
+                const flights = data.hits.hits.map((hit) => unwrap(hit, fields));
+
+
+                processJson(flights);
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
