@@ -207,17 +207,12 @@
             }
 
             function handleData(data) {
-                //download(JSON.stringify(data), 'test.txt', 'text/plain');
-
                 console.log('Loading done');
                 console.log(new Date());
-                //console.log(data);
                 console.log(data.hits.total);
                 console.log(data.hits.hits[0]);
-                const flights = data.hits.hits.map((hit) => unwrap(hit, fields));
-
-
-                processJson(flights);
+                const items = data.hits.hits.map((hit) => unwrap(hit, fields));
+                processJson(items);
             }
         });
     </script>
