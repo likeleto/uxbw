@@ -491,6 +491,7 @@ function processJson(data) {
         treemapChart.svg().selectAll("g.children rect")
             .on("click.sync", function(d) {
                 keywordsChart.filter(d.key);
+                //treemapChart.redraw();
                 keywordsChart.redraw();
                 treemapChart.redraw();
                 itemsCount.redraw();
@@ -509,8 +510,7 @@ function processJson(data) {
                 //treemapChart.redraw();
             });
     });
-    treemapChart.on("filtered", function(chart) {
-
+    treemapChart.on("postRedraw", function(chart) {
         treemapChart.svg().selectAll("g.children rect")
             .on("click.sync", function(d) {
                 keywordsChart.filter(d.key);
