@@ -195,7 +195,7 @@
                 });
                 return unwrapped;
             }
-            loadFromElasticSearch();
+            loadFromJson();
 
             function download(text, name, type) {
                 var a = document.createElement("a");
@@ -213,7 +213,7 @@
                 console.log(data.hits.total);
                 console.log(data.hits.hits[0]);
                 const items = data.hits.hits.map((hit) => unwrap(hit, fields));
-                download(JSON.stringify(data), 'test.txt', 'text/plain');
+                //download(JSON.stringify(data), 'test.txt', 'text/plain');
                 processJson(items);
             }
         });
