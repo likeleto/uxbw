@@ -71,7 +71,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="col-12 pb-3" style="text-align:center" id="category-count-chart">
-                            <h3>By Category (Top 20) <a class="reset" href="javascript:categoryCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
+                            <h3>By Category <a class="reset" href="javascript:categoryCountChart.filterAll();dc.redrawAll();" style="display: none;">reset</a></h3>
 
 
                             <div class="clearfix"></div>
@@ -155,7 +155,7 @@
 
     <script>
         $(document).ready(function() {
-            fields = ["link", "name", "digest", "category", "type", "domain", "markdownSize", "summary", "pubDate", "title", "w_keywords", "language", "authors", "concepts", "companies", "persons", "jobtitles"]
+            fields = ["link", "name", "digest", "category", "type", "domain", "markdownSize", "summary", "pubDate", "title", "keywords", "language", "authors", "concepts", "companies", "persons", "jobtitles"]
 
             function loadFromElasticSearch() {
                 query = {
@@ -195,7 +195,8 @@
                 });
                 return unwrapped;
             }
-            loadFromJson();
+            loadFromElasticSearch();
+
             function download(text, name, type) {
                 var a = document.createElement("a");
                 var file = new Blob([text], {
@@ -212,6 +213,7 @@
                 console.log(data.hits.total);
                 console.log(data.hits.hits[0]);
                 const items = data.hits.hits.map((hit) => unwrap(hit, fields));
+                download(JSON.stringify(data), 'test.txt', 'text/plain');
                 processJson(items);
             }
         });

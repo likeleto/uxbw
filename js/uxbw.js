@@ -127,7 +127,7 @@ function processJson(data) {
     });
 
     var keywords = ratings.dimension(function(d) {
-        return d.w_keywords;
+        return d.keywords;
     }, true);
 
     var keywordsGroup = keywords.group().reduceCount();
@@ -459,7 +459,7 @@ function processJson(data) {
     //keywordsTreeGroup = keywordsTree.group().reduceSum(function (d) { return 1; });
     //debugger;
     var treeDimension = ratings.dimension(function(d) {
-        return d.w_keywords;
+        return d.keywords;
     }, true);
     var treeGroup = treeDimension.group().reduceCount();
     treemapChart
@@ -605,10 +605,10 @@ function processJson(data) {
         .group(function(d) {
             return "";
         })
-        .size(200)
+        .size(8000)
         .html(function(d) {
-
-            return '<a href="'+d.link+'" target="blank" class="list-group-item list-group-item-action flex-column align-items-start "><h5 class="mb-1">' + d.title + '</h5><small>' + formatTime(d.pubDate, "%b-%Y")+ " " + d.type + '</small><p class="mb-1">' + d.summary + '</p></a>';
+//<p class="mb-1">' + d.summary + '</p>
+            return '<a href="'+d.link+'" target="blank" class="list-group-item list-group-item-action align-items-start "><div class="mb-1">' + d.title + '</div><br/><small>' + formatTime(d.pubDate, "%b-%Y")+ " " + d.type + '</small></a>';
         })
         .sortBy(function(d) {
             return d.pubDate;
